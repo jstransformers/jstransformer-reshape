@@ -11,6 +11,8 @@
 
     npm install jstransformer-reshape
 
+> **Note:** Reshape requires node v6 or above.
+
 ## API
 
 ```js
