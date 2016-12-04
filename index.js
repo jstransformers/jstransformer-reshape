@@ -12,7 +12,8 @@ exports.renderAsync = function (str, options) {
     var plugins = []
 
     if (Array.isArray(options.plugins)) {
-      for (var plugin of options.plugins) {
+      for (var i in options.plugins) {
+        var plugin = options.plugins[i]
         plugins.push(require(plugin)())
       }
     } else if (typeof options.plugins === 'object') {
