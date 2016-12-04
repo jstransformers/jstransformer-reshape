@@ -1,0 +1,35 @@
+{
+  "name": "jstransformer-reshape",
+  "version": "0.0.0",
+  "description": "Reshape support for JSTransformers.",
+  "keywords": [
+    "jstransformer",
+    "reshape"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "reshape-custom-elements": "^0.1.0",
+    "test-jstransformer": "^1.0.0"
+  },
+  "scripts": {
+    "coverage": "test-jstransformer coverage",
+    "test": "test-jstransformer"
+  },
+  "engines": {
+    "node": ">=0.10.36"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jstransformers/jstransformer-reshape.git"
+  },
+  "author": {
+    "name": "JSTransformers Team",
+    "url": "http://github.com/orgs/jstransformers/people"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "reshape": "^0.3.2"
+  }
+}
