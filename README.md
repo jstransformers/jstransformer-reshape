@@ -27,7 +27,9 @@ var options = {
   plugins: [ "reshape-custom-elements" ]
 }
 
-reshape.render(text, options).body
+reshape.renderAsync(text, options).then(function (result) {
+  console.log(result.body)
+})
 //=> '<div class="my-component">\n<div class="text my-text">Text</div>\n</div>'
 
 // or pass an object of plugins and settings
@@ -39,7 +41,9 @@ var options2 = {
   }
 }
 
-reshape.render(text, options2).body
+reshape.renderAsync(text, options2).then(function (result) {
+  console.log(result.body)
+})
 //=> '<span class="my-component">\n<span class="text my-text">Text</span>\n</span>'
 ```
 
