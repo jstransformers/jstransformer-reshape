@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-reshape",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Reshape support for JSTransformers.",
   "keywords": [
     "jstransformer",
