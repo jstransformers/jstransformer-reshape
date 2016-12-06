@@ -13,7 +13,11 @@ exports.renderAsync = function (str, options) {
 
     if (Array.isArray(options.plugins)) {
       for (var plugin of options.plugins) {
-        plugins.push(require(plugin)())
+        if (typeof plugin === 'string') {
+          plugins.push(require(plugin)())
+        } else {
+          plugins.push(plugin)
+        }
       }
     } else if (typeof options.plugins === 'object') {
       for (var key in options.plugins) {
