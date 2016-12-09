@@ -8,12 +8,12 @@ exports.outputFormat = 'html'
 
 exports.renderAsync = function (str, options) {
   return new Promise(function (resolve, reject) {
-
     var plugins = []
 
     if (Array.isArray(options.plugins)) {
       for (var plugin of options.plugins) {
         if (typeof plugin === 'string') {
+          // eslint-disable-next-line import/no-dynamic-require
           plugins.push(require(plugin)())
         } else {
           plugins.push(plugin)
@@ -21,8 +21,11 @@ exports.renderAsync = function (str, options) {
       }
     } else if (typeof options.plugins === 'object') {
       for (var key in options.plugins) {
-        var settings = options.plugins[key] || {}
-        plugins.push(require(key)(settings))
+        if ({}.hasOwnProperty.call(options.plugins, key)) {
+          var settings = options.plugins[key] || {}
+          // eslint-disable-next-line import/no-dynamic-require
+          plugins.push(require(key)(settings))
+        }
       }
     }
 
@@ -36,3 +39,4 @@ exports.renderAsync = function (str, options) {
         resolve(result.output(options.locals))
       }, reject)
   })
+}
