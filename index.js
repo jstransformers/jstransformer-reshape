@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
 var reshape = require('reshape')
 
-exports.name = 'reshape';
-exports.inputFormats = ['reshape', 'html'];
-exports.outputFormat = 'html';
+exports.name = 'reshape'
+exports.inputFormats = ['reshape', 'html']
+exports.outputFormat = 'html'
 
 exports.renderAsync = function (str, options) {
   return new Promise(function (resolve, reject) {
@@ -36,4 +36,3 @@ exports.renderAsync = function (str, options) {
         resolve(result.output(options.locals))
       }, reject)
   })
-}
