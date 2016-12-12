@@ -9,39 +9,32 @@
 
 ## Installation
 
-    npm install jstransformer-reshape
+`npm install jstransformer-reshape`
 
 > **Note:** Reshape requires node v6 or above.
 
 ## API
 
 ```js
-var reshape = require('jstransformer')(require('jstransformer-reshape'));
+const reshape = require('jstransformer')(require('jstransformer-reshape'))
+const customElements = require('reshape-custom-elements')
 
-var text = `
+const text = `
 <my-component>
   <my-text class="text">Text</my-text>
 </my-component>
 `
 
 // pass an array of plugins
-var options = {
-  plugins: [ "reshape-custom-elements" ]
-}
+const options = { plugins: [customElements()] }
 
-reshape.renderAsync(text, options).then(function (result) {
+reshape.renderAsync(text, options).then((result) => {
   console.log(result.body)
 })
 //=> '<div class="my-component">\n<div class="text my-text">Text</div>\n</div>'
 
 // or pass an object of plugins and settings
-var options2 = {
-  plugins: {
-    "reshape-custom-elements": {
-      "defaultTag": "span"
-    }
-  }
-}
+const options2 = { plugins: [customElements({ defaultTag: 'span' })] }
 
 reshape.renderAsync(text, options2).then(function (result) {
   console.log(result.body)
