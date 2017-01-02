@@ -9,6 +9,8 @@ exports.outputFormat = 'html'
 exports.renderAsync = function (str, options) {
   return new Promise(function (resolve, reject) {
     var plugins = []
+    options = options || {}
+    options.plugins = options.plugins || {}
 
     if (Array.isArray(options.plugins)) {
       for (var plugin of options.plugins) {
@@ -27,6 +29,11 @@ exports.renderAsync = function (str, options) {
           plugins.push(require(key)(settings))
         }
       }
+    }
+
+    if (typeof options.parser === 'string') {
+      // eslint-disable-next-line import/no-dynamic-require
+      options.parser = require(options.parser)
     }
 
     var modifiedOptions = options

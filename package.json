@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-reshape",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Reshape support for JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -11,6 +11,7 @@
   ],
   "devDependencies": {
     "reshape-custom-elements": "^0.1.0",
+    "sugarml": "^0.4.0",
     "test-jstransformer": "^1.0.0",
     "xo": "^0.17.1"
   },
