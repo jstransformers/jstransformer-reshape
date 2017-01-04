@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.0: 2017-01-03
+
+- Allow passing locals
+
 ## v0.1.0: 2017-01-01
 
 - Auto-require parser if it is a string

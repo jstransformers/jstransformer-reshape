@@ -6,7 +6,7 @@ exports.name = 'reshape'
 exports.inputFormats = ['reshape', 'html']
 exports.outputFormat = 'html'
 
-exports.renderAsync = function (str, options) {
+exports.renderAsync = function (str, options, locals) {
   return new Promise(function (resolve, reject) {
     var plugins = []
     options = options || {}
@@ -43,7 +43,7 @@ exports.renderAsync = function (str, options) {
     reshape(modifiedOptions)
       .process(str)
       .then(function (result) {
-        resolve(result.output(options.locals))
+        resolve(result.output(locals))
       }, reject)
   })
 }

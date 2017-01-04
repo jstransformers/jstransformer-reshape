@@ -18,28 +18,38 @@
 ```js
 const reshape = require('jstransformer')(require('jstransformer-reshape'))
 const customElements = require('reshape-custom-elements')
+const expressions = require('reshape-expressions')
 
 const text = `
 <my-component>
-  <my-text class="text">Text</my-text>
+  <my-text class="text">{{ name }}</my-text>
 </my-component>
 `
 
+const locals = {
+  name: 'caleb'
+}
+
 // pass an array of plugins
-const options = { plugins: [customElements()] }
+const options = { plugins: [customElements(), expressions()] }
 
 reshape.renderAsync(text, options).then((result) => {
   console.log(result.body)
 })
-//=> '<div class="my-component">\n<div class="text my-text">Text</div>\n</div>'
+//=> '<div class="my-component">\n<div class="text my-text">Caleb</div>\n</div>'
 
 // or pass an object of plugins and settings
-const options2 = { plugins: [customElements({ defaultTag: 'span' })] }
+const options2 = {
+  plugins: {
+    customElements: { defaultTag: 'span' },
+    expressions: {}
+  }
+}
 
-reshape.renderAsync(text, options2).then(function (result) {
+reshape.renderAsync(text, options2, locals).then(function (result) {
   console.log(result.body)
 })
-//=> '<span class="my-component">\n<span class="text my-text">Text</span>\n</span>'
+//=> '<span class="my-component">\n<span class="text my-text">Caleb</span>\n</span>'
 ```
 
 ## License
