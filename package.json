@@ -12,9 +12,9 @@
   "devDependencies": {
     "reshape-custom-elements": "^0.1.0",
     "reshape-expressions": "^0.1.4",
-    "sugarml": "^0.4.0",
+    "sugarml": "^0.5.0",
     "test-jstransformer": "^1.0.0",
-    "xo": "^0.17.1"
+    "xo": "^0.18.1"
   },
   "scripts": {
     "coverage": "test-jstransformer coverage",
@@ -34,6 +34,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "reshape": "^0.3.2"
+    "reshape": "^0.4.1"
   }
 }
