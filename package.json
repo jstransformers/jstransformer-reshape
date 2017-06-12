@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-reshape",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Reshape support for JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -12,7 +12,7 @@
   "devDependencies": {
     "reshape-custom-elements": "^0.1.0",
     "reshape-expressions": "^0.1.4",
-    "sugarml": "^0.4.0",
+    "sugarml": "^0.5.0",
     "test-jstransformer": "^1.0.0",
     "xo": "*"
   },
@@ -34,6 +34,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "reshape": "^0.3.2"
+    "reshape": "^0.4.1"
   }
 }
