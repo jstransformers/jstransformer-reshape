@@ -1,19 +1,19 @@
 'use strict'
 
-var reshape = require('reshape')
+const reshape = require('reshape')
 
 exports.name = 'reshape'
 exports.inputFormats = ['reshape', 'html']
 exports.outputFormat = 'html'
 
 exports.renderAsync = function (str, options, locals) {
-  return new Promise(function (resolve, reject) {
-    var plugins = []
+  return new Promise((resolve, reject) => {
+    const plugins = []
     options = options || {}
     options.plugins = options.plugins || {}
 
     if (Array.isArray(options.plugins)) {
-      for (var plugin of options.plugins) {
+      for (const plugin of options.plugins) {
         if (typeof plugin === 'string') {
           // eslint-disable-next-line import/no-dynamic-require
           plugins.push(require(plugin)())
@@ -22,9 +22,9 @@ exports.renderAsync = function (str, options, locals) {
         }
       }
     } else if (typeof options.plugins === 'object') {
-      for (var key in options.plugins) {
+      for (const key in options.plugins) {
         if ({}.hasOwnProperty.call(options.plugins, key)) {
-          var settings = options.plugins[key] || {}
+          const settings = options.plugins[key] || {}
           // eslint-disable-next-line import/no-dynamic-require
           plugins.push(require(key)(settings))
         }
@@ -36,13 +36,13 @@ exports.renderAsync = function (str, options, locals) {
       options.parser = require(options.parser)
     }
 
-    var modifiedOptions = options
+    const modifiedOptions = options
     modifiedOptions.plugins = plugins
 
     // Process with Reshape.
     reshape(modifiedOptions)
       .process(str)
-      .then(function (result) {
+      .then(result => {
         resolve(result.output(locals))
       }, reject)
   })
