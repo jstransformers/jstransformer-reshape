@@ -3,7 +3,6 @@
 const reshape = require('reshape')
 
 exports.name = 'reshape'
-exports.inputFormats = ['reshape', 'html']
 exports.outputFormat = 'html'
 
 exports.renderAsync = function (str, options, locals) {
