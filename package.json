@@ -1,6 +1,9 @@
 {
+  "dependencies": {
+    "reshape": "^0.4.1"
+  },
   "name": "jstransformer-reshape",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Reshape support for JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -12,14 +15,14 @@
   "devDependencies": {
     "reshape-custom-elements": "^0.1.0",
     "reshape-expressions": "^0.1.4",
-    "sugarml": "^0.5.0",
+    "sugarml": "^0.6.0",
     "test-jstransformer": "^1.0.0",
-    "xo": "^0.18.1"
+    "xo": "*"
   },
   "scripts": {
     "coverage": "test-jstransformer coverage",
     "test": "test-jstransformer",
-    "posttest": "xo --space --no-semicolon index.js"
+    "posttest": "xo --space=2 --no-semicolon index.js"
   },
   "engines": {
     "node": ">=6"
@@ -32,8 +35,5 @@
     "name": "JSTransformers Team",
     "url": "http://github.com/orgs/jstransformers/people"
   },
-  "license": "MIT",
-  "dependencies": {
-    "reshape": "^0.4.1"
-  }
+  "license": "MIT"
 }
