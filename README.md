@@ -1,7 +1,5 @@
 # jstransformer-reshape
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/jstransformer-reshape.svg)](https://greenkeeper.io/)
-
 [reshape](https://reshape.ml/) support for [JSTransformers](http://github.com/jstransformers).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-reshape/master.svg)](https://travis-ci.org/jstransformers/jstransformer-reshape)
