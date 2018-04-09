@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "reshape": "^0.4.1"
+  },
   "name": "jstransformer-reshape",
   "version": "0.3.0",
   "description": "Reshape support for JSTransformers.",
@@ -32,8 +35,5 @@
     "name": "JSTransformers Team",
     "url": "http://github.com/orgs/jstransformers/people"
   },
-  "license": "MIT",
-  "dependencies": {
-    "reshape": "^0.4.1"
-  }
+  "license": "MIT"
 }
