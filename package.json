@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "reshape": "^0.5.0"
+    "reshape": "^1.0.0"
   },
   "name": "jstransformer-reshape",
   "version": "0.3.0",
