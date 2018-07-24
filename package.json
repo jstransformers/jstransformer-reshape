@@ -15,7 +15,7 @@
   "devDependencies": {
     "reshape-custom-elements": "^0.1.0",
     "reshape-expressions": "^0.1.4",
-    "sugarml": "^0.6.0",
+    "sugarml": "^0.7.0",
     "test-jstransformer": "^1.0.0",
     "xo": "*"
   },
