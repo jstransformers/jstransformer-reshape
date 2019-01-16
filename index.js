@@ -14,7 +14,6 @@ exports.renderAsync = function (str, options, locals) {
     if (Array.isArray(options.plugins)) {
       for (const plugin of options.plugins) {
         if (typeof plugin === 'string') {
-          // eslint-disable-next-line import/no-dynamic-require
           plugins.push(require(plugin)())
         } else {
           plugins.push(plugin)
@@ -24,14 +23,12 @@ exports.renderAsync = function (str, options, locals) {
       for (const key in options.plugins) {
         if ({}.hasOwnProperty.call(options.plugins, key)) {
           const settings = options.plugins[key] || {}
-          // eslint-disable-next-line import/no-dynamic-require
           plugins.push(require(key)(settings))
         }
       }
     }
 
     if (typeof options.parser === 'string') {
-      // eslint-disable-next-line import/no-dynamic-require
       options.parser = require(options.parser)
     }
 
